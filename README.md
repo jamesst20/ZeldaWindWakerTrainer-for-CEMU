@@ -3,3 +3,5 @@ A simple trainer built for fun for The Legend Of Zelda Wind Waker HD running on 
 
 Tested on Cemu 1.15.15b
 Title : Zelda Wind Waker HD (US v0) [0005000-10143500]
+
+Demo https://www.youtube.com/watch?v=o43d2z9tSaU

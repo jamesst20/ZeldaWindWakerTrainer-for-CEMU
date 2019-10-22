@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZeldaWindWakerTrainer"
         mc:Ignorable="d"        
-        Title="Zelda WindWaker Trainer - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
+        Title="Zelda WindWaker Trainer v1.0 - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
         Closing="Window_Closing">
     <Grid>
         <TabControl SelectedIndex="0">
