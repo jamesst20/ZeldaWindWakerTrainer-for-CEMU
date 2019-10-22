@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZeldaWindWakerTrainer.OffsetDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZeldaWindWakerTrainer"
+        mc:Ignorable="d"
+        Title="Cemu - Base Address"
+        Height="212"
+        Width="500"
+        WindowStyle="None">
+    <StackPanel Orientation="Vertical" Margin="10 10 10 10">
+        <TextBlock TextWrapping="Wrap" Margin="0 0 0 30">
+            Please type here (in hexadecimal) the base address that Cemu loads the game. The address change everytime Cemu is restarted.
+            The address is easy to find, it should be written in cemu.log. The trainer will try to find that information automatically.
+        </TextBlock>
+        <TextBox x:Name="TxtBaseAddress" Margin="0 0 0 20"></TextBox>
+        <Button Content="Start" Click="ButtonStart_Click" Margin="0 0 0 10" />
+        <Button Content="Cancel" Click="ButtonCancel_Click" />
+    </StackPanel>
+</Window>
