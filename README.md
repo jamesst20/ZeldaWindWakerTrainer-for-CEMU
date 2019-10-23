@@ -10,8 +10,10 @@ Demo https://www.youtube.com/watch?v=o43d2z9tSaU
 
 The trainer will not open if these dependencies are not installed on your computer.
 
-1. Both .NET Core Runtime 3.0 and .NET Core Desktop Runtime 3.0 https://dotnet.microsoft.com/download/dotnet-core/3.0/runtime
-2. Microsoft Visual C++ 2015 Redistributable https://www.microsoft.com/en-us/download/details.aspx?id=52685
+1. Both .NET Core Runtime 3.0 and .NET Core Desktop Runtime 3.0
+   * https://dotnet.microsoft.com/download/dotnet-core/3.0/runtime
+2. Microsoft Visual C++ 2015 Redistributable
+   * https://www.microsoft.com/en-us/download/details.aspx?id=52685
 
 ## What is missing
 
