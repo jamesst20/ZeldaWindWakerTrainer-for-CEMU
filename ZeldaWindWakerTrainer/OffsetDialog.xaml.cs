@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.IO;
+using System.Text.RegularExpressions;
 using Path = System.IO.Path;
 
 namespace ZeldaWindWakerTrainer
@@ -34,18 +35,27 @@ namespace ZeldaWindWakerTrainer
         private static string FindCemuBaseAddress(string cemuPath)
         {
             string address = "";
-            using (FileStream stream = File.Open($"{Path.GetDirectoryName(cemuPath)}\\log.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            if (File.Exists(Path.Join(cemuPath, "log.txt")))
             {
-                using StreamReader reader = new StreamReader(stream);
-                while (!reader.EndOfStream)
+                using (FileStream stream = File.Open(Path.Join(cemuPath, "log.txt"), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    string line = reader.ReadLine();
-                    if (line == null || !line.Contains("Base: 0x")) continue;
-                    address = line.Substring(line.IndexOf("Base: ", StringComparison.CurrentCulture) + 6);
-                    break;
+                    using StreamReader reader = new StreamReader(stream);
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (line == null) continue;
+                        
+                        Match match = Regex.Match(line, @"base:\s*(0x[0-9a-fA-F]+)", RegexOptions.IgnoreCase);
+
+                        if (match.Success)
+                        {
+                            address = match.Groups[1].Value;
+                            break;
+                        }
+                    }
                 }
             }
-
+            
             return address;
         }
     }

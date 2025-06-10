@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 using Humanizer;
@@ -24,7 +25,21 @@ namespace ZeldaWindWakerTrainer
 
         public string GetCemuPath()
         {
-            return _processWrapper.GetProcessLocation();
+            return Path.GetDirectoryName(_processWrapper.GetProcessLocation());
+        }
+
+        public string GetCemuAppDataPath()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            
+            if (File.Exists(Path.Join(appDataPath, "cemu", "log.txt")))
+            {
+                return Path.Join(appDataPath, "cemu");
+            } else if (File.Exists(Path.Join(GetCemuPath(), "cemu", "log.txt")))
+            {
+                return GetCemuPath();
+            }
+            return "";
         }
 
         public void SetBaseAddress(long baseAddress)

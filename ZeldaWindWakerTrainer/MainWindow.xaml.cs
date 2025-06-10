@@ -20,7 +20,7 @@ namespace ZeldaWindWakerTrainer
         {
             _windWaker = new WindWaker {DisableWrite = true};
 
-            OffsetDialog offsetDialog = new OffsetDialog(_windWaker.GetCemuPath());
+            OffsetDialog offsetDialog = new OffsetDialog(_windWaker.GetCemuAppDataPath());
             if (offsetDialog.ShowDialog() != true) Environment.Exit(0);
 
             _windWaker.SetBaseAddress(offsetDialog.GetBaseAddress());
