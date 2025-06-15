@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## 1.1.1 / 2025-06-14
+
+* Add player position support
+
 ## 1.1.0 / 2025-06-10
 
 * Upgrade to .Net SDK 8.0

@@ -4,63 +4,90 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZeldaWindWakerTrainer"
-        mc:Ignorable="d"        
-        Title="Zelda WindWaker Trainer v1.1 - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
+        mc:Ignorable="d"
+        Title="Zelda WindWaker Trainer v1.1.1 - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
         Closing="Window_Closing">
     <Grid>
         <TabControl SelectedIndex="0">
             <TabItem Header="General" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top" Width="70">
                 <Grid Background="White">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
+                        <RowDefinition />
                     </Grid.RowDefinitions>
                     <GroupBox Header="Player" Grid.Column="0" Grid.Row="0">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Max health in quarters (12-80) :" Padding="0" Margin="5 1 5 0"/>
+                                <Label Content="Max health in quarters (12-80) :" Padding="0" Margin="5 1 5 0" />
                                 <Label x:Name="LblMaxHealth" Content="0" Padding="0" Margin="0 1 20 0" />
-                                <TextBox x:Name="TxtMaxHealth" Width="50" Margin="0 0 5 0"/>
-                                <Button x:Name="BtUpdateMaxHealth" Content="Update" Width="60" Click="BtUpdateMaxHealth_Click" />
+                                <TextBox x:Name="TxtMaxHealth" Width="50" Margin="0 0 5 0" />
+                                <Button x:Name="BtUpdateMaxHealth" Content="Update" Width="60"
+                                        Click="BtUpdateMaxHealth_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Health (0-80) :" Padding="0" Margin="5 1 5 0"/>
+                                <Label Content="Health (0-80) :" Padding="0" Margin="5 1 5 0" />
                                 <Label x:Name="LblHealth" Content="0" Padding="0" Margin="0 1 20 0" />
-                                <TextBox x:Name="TxtHealth" Width="50" Margin="0 0 5 0"/>
-                                <Button x:Name="BtUpdateHealth" Content="Update" Width="60" Click="BtUpdateHealth_Click" />
+                                <TextBox x:Name="TxtHealth" Width="50" Margin="0 0 5 0" />
+                                <Button x:Name="BtUpdateHealth" Content="Update" Width="60"
+                                        Click="BtUpdateHealth_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Max stamina unlocked (0/16/32) ?"/>
-                                <CheckBox x:Name="CheckboxMaxStamina" IsThreeState="True" Margin="0 6 0 0" Click="CheckboxMaxStamina_Click" />
+                                <Label Content="Max stamina unlocked (0/16/32) ?" />
+                                <CheckBox x:Name="CheckboxMaxStamina" IsThreeState="True" Margin="0 6 0 0"
+                                          Click="CheckboxMaxStamina_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Stamina (0-32) :" Padding="0" Margin="5 1 5 0"/>
+                                <Label Content="Stamina (0-32) :" Padding="0" Margin="5 1 5 0" />
                                 <Label x:Name="LblStamina" Content="0" Padding="0" Margin="0 1 20 0" />
-                                <TextBox x:Name="TxtStamina" Width="50" Margin="0 0 5 0"/>
-                                <Button x:Name="BtUpdateStamina" Content="Update" Width="60" Click="BtUpdateStamina_Click" />
+                                <TextBox x:Name="TxtStamina" Width="50" Margin="0 0 5 0" />
+                                <Button x:Name="BtUpdateStamina" Content="Update" Width="60"
+                                        Click="BtUpdateStamina_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Max rupee: " Grid.Column="0"/>
-                                <ComboBox x:Name="ComboMaxRupee" Width="150" SelectedValuePath="Content" SelectionChanged="ComboMaxRupee_SelectionChanged">
+                                <Label Content="Max rupee: " Grid.Column="0" />
+                                <ComboBox x:Name="ComboMaxRupee" Width="150" SelectedValuePath="Content"
+                                          SelectionChanged="ComboMaxRupee_SelectionChanged">
                                     <ComboBoxItem Tag="100">100</ComboBoxItem>
                                     <ComboBoxItem Tag="1000">1000</ComboBoxItem>
                                     <ComboBoxItem Tag="5000">5000</ComboBoxItem>
                                 </ComboBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Current rupee: " Padding="0" Margin="5 1 5 0"/>
-                                <Label x:Name="LblRupee" Content="0" Padding="0" Margin="0 1 20 0"/>
-                                <TextBox x:Name="TxtRupee" Width="100" Text="0"/>
-                                <Button x:Name="BtUpdateRupee" Content="Update" Width="60" Margin="5 0 0 0" Click="BtUpdateRupee_Click" />
+                                <Label Content="Current rupee: " Padding="0" Margin="5 1 5 0" />
+                                <Label x:Name="LblRupee" Content="0" Padding="0" Margin="0 1 20 0" />
+                                <TextBox x:Name="TxtRupee" Width="100" Text="0" />
+                                <Button x:Name="BtUpdateRupee" Content="Update" Width="60" Margin="5 0 0 0"
+                                        Click="BtUpdateRupee_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
-                                <Label Content="Beedle Points :" Padding="0" Margin="5 1 5 0"/>
+                                <Label Content="Beedle Points :" Padding="0" Margin="5 1 5 0" />
                                 <Label x:Name="LblBeedlePoints" Content="0" Padding="0" Margin="0 1 20 0" />
-                                <TextBox x:Name="TxtBeedlePoints" Width="50" Margin="0 0 5 0"/>
-                                <Button x:Name="BtUpdateBeedlePoints" Content="Update" Width="60" Click="BtUpdateBeedlePoints_Click" />
+                                <TextBox x:Name="TxtBeedlePoints" Width="50" Margin="0 0 5 0" />
+                                <Button x:Name="BtUpdateBeedlePoints" Content="Update" Width="60"
+                                        Click="BtUpdateBeedlePoints_Click" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <Label Content="Player position (X, Y ,Z) :" Padding="0" Margin="5 1 5 0" />
+                                <Label Content="0" Padding="0" Margin="0 1 0 0" FontWeight="SemiBold" Name="LblPlayerX" />
+                                <Label Content="," Padding="0" Margin="0 1 10 0" />
+                                <Label Content="0" Padding="0" Margin="0 1 0 0" FontWeight="SemiBold" Name="LblPlayerY" />
+                                <Label Content="," Padding="0" Margin="0 1 10 0" />
+                                <Label Content="0" Padding="0" Margin="0 1 0 0" FontWeight="SemiBold" Name="LblPlayerZ" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <Label Content="Update position :" Padding="0" Margin="5 1 5 0" />
+                                <TextBox x:Name="TxtPlayerX" Width="90" Margin="0 0 5 0" />
+                                <TextBox x:Name="TxtPlayerY" Width="90" Margin="0 0 5 0" />
+                                <TextBox x:Name="TxtPlayerZ" Width="90" Margin="0 0 5 0" />
+                                <Button x:Name="BtUpdatePlayerPosition" Content="Update" Width="60"
+                                        Click="BtUpdatePlayerPosition_Click" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <Label Content="Position updates only work outside if there is no collision."
+                                       Padding="0" Margin="5 1 5 0" Foreground="Red" />
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
@@ -71,28 +98,40 @@
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <CheckBox Content="Power Bracelets" x:Name="CheckBoxPowerBracelets" Grid.Row="0" Margin="5 0 0 0" Click="CheckBoxPowerBracelets_Click"/>
+                            <CheckBox Content="Power Bracelets" x:Name="CheckBoxPowerBracelets" Grid.Row="0"
+                                      Margin="5 0 0 0" Click="CheckBoxPowerBracelets_Click" />
                             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                <Label Content="Pearls :"/>
-                                <CheckBox x:Name="CheckboxPearlDin" Content="Din" IsChecked="False" Margin="0 6 6 0" Click="CheckboxPearls_Click" />
-                                <CheckBox x:Name="CheckboxPearlNayru" Content="Nayru" IsChecked="False" Margin="0 6 6 0" Click="CheckboxPearls_Click" />
-                                <CheckBox x:Name="CheckboxPearlFarore" Content="Farore" IsChecked="False" Margin="0 6 0 0" Click="CheckboxPearls_Click" />
+                                <Label Content="Pearls :" />
+                                <CheckBox x:Name="CheckboxPearlDin" Content="Din" IsChecked="False" Margin="0 6 6 0"
+                                          Click="CheckboxPearls_Click" />
+                                <CheckBox x:Name="CheckboxPearlNayru" Content="Nayru" IsChecked="False"
+                                          Margin="0 6 6 0" Click="CheckboxPearls_Click" />
+                                <CheckBox x:Name="CheckboxPearlFarore" Content="Farore" IsChecked="False"
+                                          Margin="0 6 0 0" Click="CheckboxPearls_Click" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Row="2">
                                 <Label Content="Triforce fragments :" />
                                 <WrapPanel Orientation="Horizontal" Width="350">
-                                    <CheckBox x:Name="CheckboxTriforce1" Content="#1" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce2" Content="#2" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce3" Content="#3" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce4" Content="#4" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce5" Content="#5" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce6" Content="#6" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce7" Content="#7" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
-                                    <CheckBox x:Name="CheckboxTriforce8" Content="#8" IsChecked="False" Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce1" Content="#1" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce2" Content="#2" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce3" Content="#3" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce4" Content="#4" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce5" Content="#5" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce6" Content="#6" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce7" Content="#7" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
+                                    <CheckBox x:Name="CheckboxTriforce8" Content="#8" IsChecked="False"
+                                              Margin="0 6 6 0" Click="CheckboxTriforce_Click" />
                                 </WrapPanel>
                             </StackPanel>
                             <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="3" Foreground="Red" Margin="0 20">
@@ -113,23 +152,23 @@
                     <Grid x:Name="GridMap" Grid.Column="0" ShowGridLines="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
-                            <ColumnDefinition Width="1*"  />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Center" Content=""></Label>
                         <Label Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" Content="A"></Label>
@@ -219,7 +258,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 10 0 0" x:Name="PanelTreasureMap1">
-                        <CheckBox Content="Treasure map #1" Tag="2_8"/>
+                        <CheckBox Content="Treasure map #1" Tag="2_8" />
                         <CheckBox Content="Treasure map #2" Tag="2_1" />
                         <CheckBox Content="Treasure map #3" Tag="1_7" />
                         <CheckBox Content="Treasure map #4" Tag="1_6" />
@@ -286,9 +325,12 @@
                         <CheckBox Content="Triforce map 3" Tag="4_5" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="0 10 0 0" Grid.Column="3">
-                        <CheckBox x:Name="CheckboxMapTriforceDecrypted1" Content="Triforce map 1 decrypted" Click="CheckboxMapTriforceDecrypted1_Click" />
-                        <CheckBox x:Name="CheckboxMapTriforceDecrypted2" Content="Triforce map 2 decrypted" Click="CheckboxMapTriforceDecrypted2_Click" />
-                        <CheckBox x:Name="CheckboxMapTriforceDecrypted3" Content="Triforce map 3 decrypted" Click="CheckboxMapTriforceDecrypted3_Click" />
+                        <CheckBox x:Name="CheckboxMapTriforceDecrypted1" Content="Triforce map 1 decrypted"
+                                  Click="CheckboxMapTriforceDecrypted1_Click" />
+                        <CheckBox x:Name="CheckboxMapTriforceDecrypted2" Content="Triforce map 2 decrypted"
+                                  Click="CheckboxMapTriforceDecrypted2_Click" />
+                        <CheckBox x:Name="CheckboxMapTriforceDecrypted3" Content="Triforce map 3 decrypted"
+                                  Click="CheckboxMapTriforceDecrypted3_Click" />
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -304,41 +346,50 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="Red" FontSize="18" Margin="5 0 5 5">
+                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                               Foreground="Red" FontSize="18" Margin="5 0 5 5">
                         Most of the stuffs here requires to save and reload the game.
                         Items automatically appear in the inventory where it belongs
                         after the game is reloaded.
                     </TextBlock>
-                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="10 20 0 0" x:Name="PanelUnlockedItems">
-                        <CheckBox Content="Pirate's Charm (Also unlocks Map tab in inventory)" x:Name="CheckBoxUnlockPiratesCharm" Click="CheckBoxUnlockPiratesCharm_Click" />
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="10 20 0 0"
+                                x:Name="PanelUnlockedItems">
+                        <CheckBox Content="Pirate's Charm (Also unlocks Map tab in inventory)"
+                                  x:Name="CheckBoxUnlockPiratesCharm" Click="CheckBoxUnlockPiratesCharm_Click" />
                         <CheckBox Content="Telescope" x:Name="CheckBoxUnlockTelescope" Tag="Telescope" />
-                        <CheckBox Content="Swift Sail (fast) / Normal Sail" IsThreeState="True" x:Name="CheckBoxUnlockSail" Tag="Sail"/>
-                        <CheckBox Content="Wind Waker" x:Name="CheckBoxUnlockWindWaker" Click="CheckBoxUnlockWindWaker_Click" />
-                        <CheckBox Content="Hero Amulet" x:Name="CheckBoxUnlockHeroAmulet" Click="CheckBoxUnlockHeroAmulet_Click" />
+                        <CheckBox Content="Swift Sail (fast) / Normal Sail" IsThreeState="True"
+                                  x:Name="CheckBoxUnlockSail" Tag="Sail" />
+                        <CheckBox Content="Wind Waker" x:Name="CheckBoxUnlockWindWaker"
+                                  Click="CheckBoxUnlockWindWaker_Click" />
+                        <CheckBox Content="Hero Amulet" x:Name="CheckBoxUnlockHeroAmulet"
+                                  Click="CheckBoxUnlockHeroAmulet_Click" />
                         <CheckBox Content="Grappling Hook" x:Name="CheckBoxUnlockGrapplingHook" Tag="GrapplingHook" />
                         <CheckBox Content="Spoils Bag" x:Name="CheckBoxUnlockSpoilsBag" Tag="SpoilsBag" />
                         <CheckBox Content="Boomerang" x:Name="CheckBoxUnlockBoomerang" Tag="Boomerang" />
                         <CheckBox Content="Deku Leaf" x:Name="CheckBoxUnlockDekuLeaf" Tag="DekuLeaf" />
-                        <CheckBox Content="Tingle Bottle" x:Name="CheckBoxUnlockTingleBottle" Tag="TingleBottle"/>
-                        <CheckBox Content="Picto Box" x:Name="CheckBoxUnlockPictoBox" Tag="PictoBox"/>
-                        <CheckBox Content="Iron Boots" x:Name="CheckBoxUnlockIronBoots" Tag="IronBoots"/>
-                        <CheckBox Content="Magic Armor" x:Name="CheckBoxUnlockMagicArmor" Tag="MagicArmor"/>
-                        <CheckBox Content="Bait Bag" x:Name="CheckBoxUnlockBaitBag" Tag="BaitBag"/>
-                        <ComboBox x:Name="ComboBoxUnlockBow" SelectedIndex="0" SelectedValuePath="Tag" Margin="0 1 0 1" Width="200" HorizontalAlignment="Left" SelectionChanged="ComboBoxUnlockBow_SelectionChanged">
+                        <CheckBox Content="Tingle Bottle" x:Name="CheckBoxUnlockTingleBottle" Tag="TingleBottle" />
+                        <CheckBox Content="Picto Box" x:Name="CheckBoxUnlockPictoBox" Tag="PictoBox" />
+                        <CheckBox Content="Iron Boots" x:Name="CheckBoxUnlockIronBoots" Tag="IronBoots" />
+                        <CheckBox Content="Magic Armor" x:Name="CheckBoxUnlockMagicArmor" Tag="MagicArmor" />
+                        <CheckBox Content="Bait Bag" x:Name="CheckBoxUnlockBaitBag" Tag="BaitBag" />
+                        <ComboBox x:Name="ComboBoxUnlockBow" SelectedIndex="0" SelectedValuePath="Tag" Margin="0 1 0 1"
+                                  Width="200" HorizontalAlignment="Left"
+                                  SelectionChanged="ComboBoxUnlockBow_SelectionChanged">
                             <ComboBoxItem Tag="0">Bow: Not unlocked</ComboBoxItem>
                             <ComboBoxItem Tag="1">Bow: Normal</ComboBoxItem>
                             <ComboBoxItem Tag="3">Bow: Ice and Fire</ComboBoxItem>
                             <ComboBoxItem Tag="7">Bow: Ice, Fire and Light</ComboBoxItem>
                         </ComboBox>
-                        <CheckBox Content="Bomb" x:Name="CheckBoxUnlockBomb" Tag="Bomb"/>
-                        <CheckBox Content="Delivery Bag" x:Name="CheckBoxUnlockDeliveryBag" Tag="DeliveryBag"/>
-                        <CheckBox Content="Hookshot" x:Name="CheckBoxUnlockHookshot" Tag="Hookshot"/>
-                        <CheckBox Content="Skull Hammer" x:Name="CheckBoxUnlockSkullHammer" Tag="SkullHammer"/>
+                        <CheckBox Content="Bomb" x:Name="CheckBoxUnlockBomb" Tag="Bomb" />
+                        <CheckBox Content="Delivery Bag" x:Name="CheckBoxUnlockDeliveryBag" Tag="DeliveryBag" />
+                        <CheckBox Content="Hookshot" x:Name="CheckBoxUnlockHookshot" Tag="Hookshot" />
+                        <CheckBox Content="Skull Hammer" x:Name="CheckBoxUnlockSkullHammer" Tag="SkullHammer" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                             <Label>Maximum bomb :</Label>
-                            <ComboBox Width="120" SelectedIndex="0" x:Name="ComboMaxBomb" SelectedValuePath="Content" SelectionChanged="ComboMaxBomb_SelectionChanged">
+                            <ComboBox Width="120" SelectedIndex="0" x:Name="ComboMaxBomb" SelectedValuePath="Content"
+                                      SelectionChanged="ComboMaxBomb_SelectionChanged">
                                 <ComboBoxItem>0</ComboBoxItem>
                                 <ComboBoxItem>30</ComboBoxItem>
                                 <ComboBoxItem>60</ComboBoxItem>
@@ -348,11 +399,13 @@
                             <Label>Bomb quantity :</Label>
                             <Label x:Name="LblBombCount">0</Label>
                             <TextBox x:Name="TxtBombCount" Width="120" Margin="20 0 0 0"></TextBox>
-                            <Button Content="Update" x:Name="BtUpdateBombCount" Width="80" Click="BtUpdateBombCount_Click"/>
+                            <Button Content="Update" x:Name="BtUpdateBombCount" Width="80"
+                                    Click="BtUpdateBombCount_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                             <Label>Maximum bow arrow :</Label>
-                            <ComboBox Width="120" SelectedIndex="0" x:Name="ComboMaxArrow" SelectedValuePath="Content" SelectionChanged="ComboMaxArrow_SelectionChanged">
+                            <ComboBox Width="120" SelectedIndex="0" x:Name="ComboMaxArrow" SelectedValuePath="Content"
+                                      SelectionChanged="ComboMaxArrow_SelectionChanged">
                                 <ComboBoxItem>0</ComboBoxItem>
                                 <ComboBoxItem>30</ComboBoxItem>
                                 <ComboBoxItem>60</ComboBoxItem>
@@ -362,11 +415,13 @@
                             <Label>Arrow quantity :</Label>
                             <Label x:Name="LblArrowCount">0</Label>
                             <TextBox x:Name="TxtArrowCount" Width="120" Margin="20 0 0 0"></TextBox>
-                            <Button Content="Update" x:Name="BtUpdateArrowCount" Width="80" Click="BtUpdateArrowCount_Click"/>
+                            <Button Content="Update" x:Name="BtUpdateArrowCount" Width="80"
+                                    Click="BtUpdateArrowCount_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                             <Label Content="Sword" />
-                            <ComboBox Width="250" SelectedIndex="0" SelectedValuePath="Tag" x:Name="ComboSwordType" SelectionChanged="ComboSwordType_SelectionChanged">
+                            <ComboBox Width="250" SelectedIndex="0" SelectedValuePath="Tag" x:Name="ComboSwordType"
+                                      SelectionChanged="ComboSwordType_SelectionChanged">
                                 <ComboBoxItem Tag="0">No sword</ComboBoxItem>
                                 <ComboBoxItem Tag="1">Normal Sword</ComboBoxItem>
                                 <ComboBoxItem Tag="3">Master Sword (1/3)</ComboBoxItem>
@@ -376,7 +431,8 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                             <Label Content="Shield" />
-                            <ComboBox Width="250" SelectedIndex="0" SelectedValuePath="Tag" x:Name="ComboShieldType" SelectionChanged="ComboShieldType_SelectionChanged">
+                            <ComboBox Width="250" SelectedIndex="0" SelectedValuePath="Tag" x:Name="ComboShieldType"
+                                      SelectionChanged="ComboShieldType_SelectionChanged">
                                 <ComboBoxItem Tag="0">No Sheild</ComboBoxItem>
                                 <ComboBoxItem Tag="1">Wooden Shield</ComboBoxItem>
                                 <ComboBoxItem Tag="3">Miror Shield</ComboBoxItem>
@@ -396,12 +452,12 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Grid.Column="0" x:Name="PanelSongs" Margin="5 10 0 0">
-                        <CheckBox Content="Wind's Requiem" Tag="0"/>
-                        <CheckBox Content="Ballad of Gales" Tag="1"/>
-                        <CheckBox Content="Command Melody" Tag="2"/>
-                        <CheckBox Content="Song of Passing" Tag="5"/>
-                        <CheckBox Content="Earth God's Lyric" Tag="3"/>
-                        <CheckBox Content="Wind God's Aria" Tag="4"/>
+                        <CheckBox Content="Wind's Requiem" Tag="0" />
+                        <CheckBox Content="Ballad of Gales" Tag="1" />
+                        <CheckBox Content="Command Melody" Tag="2" />
+                        <CheckBox Content="Song of Passing" Tag="5" />
+                        <CheckBox Content="Earth God's Lyric" Tag="3" />
+                        <CheckBox Content="Wind God's Aria" Tag="4" />
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -410,7 +466,7 @@
             <TabItem Header="Inventory" Height="22" Width="70">
                 <Grid x:Name="GridInventory">
                     <Grid.Background>
-                        <ImageBrush ImageSource="/ZeldaWindWakerTrainer;component/images/inventory.png"/>
+                        <ImageBrush ImageSource="/ZeldaWindWakerTrainer;component/images/inventory.png" />
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -418,25 +474,63 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory14" Margin="64,226,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory16" Margin="118,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory15" Margin="136,226,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory17" Margin="187,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory0" Margin="330,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory7" Margin="269,186,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory8" Margin="330,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory4" Margin="499,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory11" Margin="442,186,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory18" Margin="499,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory3" Margin="661,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory5" Margin="612,186,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory20" Margin="661,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory6" Margin="737,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory12" Margin="688,186,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory9" Margin="737,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory13" Margin="811,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory19" Margin="765,186,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black" Background="#FF5A9AE0" x:Name="BtInventory10" Margin="811,324,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory14" Margin="64,226,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory16" Margin="118,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory15" Margin="136,226,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory17" Margin="187,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory0" Margin="330,42,0,0" HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory7" Margin="269,186,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory8" Margin="330,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory4" Margin="499,42,0,0" HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory11" Margin="442,186,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory18" Margin="499,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory3" Margin="661,42,0,0" HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory5" Margin="612,186,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory20" Margin="661,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory6" Margin="737,42,0,0" HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory12" Margin="688,186,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory9" Margin="737,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory13" Margin="811,42,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory19" Margin="765,186,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Border Width="30" Height="30" CornerRadius="50" BorderThickness="5" BorderBrush="Black"
+                            Background="#FF5A9AE0" x:Name="BtInventory10" Margin="811,324,0,0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
 
@@ -444,7 +538,7 @@
             <TabItem Header="Spoil's Bag" Height="22" Width="70">
                 <Grid x:Name="SpoilsBagInventory">
                     <Grid.Background>
-                        <ImageBrush ImageSource="/ZeldaWindWakerTrainer;component/images/bag.png"/>
+                        <ImageBrush ImageSource="/ZeldaWindWakerTrainer;component/images/bag.png" />
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -452,28 +546,36 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Label Tag="0"  BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="298,63,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="0" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="298,63,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Joy pendant
                     </Label>
-                    <Label Tag="1" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="0,63,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Label Tag="1" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="0,63,0,0"
+                           HorizontalAlignment="Center" VerticalAlignment="Top">
                         Red Chu Jelly
                     </Label>
-                    <Label Tag="2" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="565,63,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="2" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="565,63,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Golden Feather
                     </Label>
-                    <Label Tag="3" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="298,172,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="3" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="298,172,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Skull Necklace
                     </Label>
-                    <Label Tag="4" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="0,172,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Label Tag="4" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="0,172,0,0"
+                           HorizontalAlignment="Center" VerticalAlignment="Top">
                         Knight's Crest
                     </Label>
-                    <Label Tag="5" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="565,172,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="5" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="565,172,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Boko Baba Seed
                     </Label>
-                    <Label Tag="6" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="355,284,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="6" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="355,284,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Green Chu Jelly
                     </Label>
-                    <Label Tag="7" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="472,284,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Tag="7" BorderThickness="2" BorderBrush="Black" Background="#FF5A9AE0" Margin="472,284,0,0"
+                           HorizontalAlignment="Left" VerticalAlignment="Top">
                         Blue Chu Jelly
                     </Label>
                 </Grid>

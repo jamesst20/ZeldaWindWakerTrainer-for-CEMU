@@ -45,6 +45,11 @@ namespace ZeldaWindWakerTrainer
                 {
                     LblHealth.Content = _windWaker.GetHealth().ToString();
                     LblMaxHealth.Content = _windWaker.GetMaxHealth();
+                    
+                    float[] positions = _windWaker.GetPlayerPosition();
+                    LblPlayerX.Content = positions[0].ToString();
+                    LblPlayerY.Content = positions[1].ToString();
+                    LblPlayerZ.Content = positions[2].ToString();
 
                     int maxStamina = _windWaker.GetMaxStaminaUnlock();
                     CheckboxMaxStamina.IsChecked = maxStamina switch
@@ -398,6 +403,22 @@ namespace ZeldaWindWakerTrainer
         private void CheckBoxUnlockPiratesCharm_Click(object sender, RoutedEventArgs e)
         {
             _windWaker.UpdatePirateCharmUnlocked(CheckBoxUnlockPiratesCharm.IsChecked == true);
+        }
+        
+        private void BtUpdatePlayerPosition_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                float x = float.Parse(TxtPlayerX.Text);
+                float y = float.Parse(TxtPlayerY.Text);
+                float z = float.Parse(TxtPlayerZ.Text);
+
+                _windWaker.UpdatePlayerPosition(x, y, z);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Invalid coordinates. Verify number syntax.");
+            }
         }
     }
 }

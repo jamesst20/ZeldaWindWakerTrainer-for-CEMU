@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-
+using System.Windows;
 using Humanizer;
 
 namespace ZeldaWindWakerTrainer
@@ -19,7 +19,9 @@ namespace ZeldaWindWakerTrainer
 
             if (!_processWrapper.OpenProcess())
             {
-                throw new Exception("Failed to open cemu process. Is it running ?");
+                MessageBox.Show("Failed to open CEMU process. Make sure CEMU and the game is running." +
+                                "If it really is running, try running the trainer as Administrator.");
+                Environment.Exit(0);
             }
         }
 
@@ -130,6 +132,15 @@ namespace ZeldaWindWakerTrainer
             else if (value == 2) return 5000;
 
             return -1;
+        }
+        
+        public float[] GetPlayerPosition()
+        {
+            return [
+                ReadFloatOffset(GameOffsets.PLAYER_X), 
+                ReadFloatOffset(GameOffsets.PLAYER_Y), 
+                ReadFloatOffset(GameOffsets.PLAYER_Z)
+            ];
         }
 
         public bool UpdateMaxRupee(int quantity)
@@ -402,6 +413,13 @@ namespace ZeldaWindWakerTrainer
         {
             return WriteOffset(GameOffsets.BEEDLE_SHOP_POINT, qty);
         }
+        
+        public bool UpdatePlayerPosition(float x, float y, float z)
+        {
+            return WriteOffset(GameOffsets.PLAYER_Z, z) 
+                   && WriteOffset(GameOffsets.PLAYER_Y, y)
+                   && WriteOffset(GameOffsets.PLAYER_X, x);
+        }
 
         public int GetSwordType()
         {
@@ -455,6 +473,24 @@ namespace ZeldaWindWakerTrainer
 
             return _processWrapper.OverwriteMemoryProtection(offset.Address, offset.Size) && _processWrapper.WriteMemory(offset, data);
         }
+        
+        private bool WriteOffset(Offset offset, float value)
+        {
+            if (DisableWrite) return false;
+
+            byte[] data;
+            if (offset.Size == 4)
+            {
+                if (value > 0x7F7FFFFF) return false;
+                data = BitConverter.GetBytes(value);
+            }
+            else
+            {
+                throw new Exception("Only 4 bytes single-precision floating point number are supported");
+            }
+
+            return _processWrapper.OverwriteMemoryProtection(offset.Address, offset.Size) && _processWrapper.WriteMemory(offset, data);
+        }
 
         private bool WriteOffset(Offset offset, bool[] bitsValues)
         {
@@ -495,6 +531,15 @@ namespace ZeldaWindWakerTrainer
             else if (data.Length == 2) return BitConverter.ToInt16(data, 0);
             
             throw new Exception("32 Bits and 64 Bits types are currently not handled");
+        }
+        
+        private float ReadFloatOffset(Offset offset)
+        {
+            byte[] data = _processWrapper.ReadMemory(offset);
+            if (data.Length != offset.Size) return -1;
+            else if (data.Length == 4) return BitConverter.ToSingle(data, 0);
+            
+            throw new Exception("Only 4 bytes single-precision floating point number are supported");
         }
     }
 }

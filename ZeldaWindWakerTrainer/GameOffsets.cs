@@ -3,6 +3,13 @@
     internal class GameOffsets
     {
         /**
+         * Player position
+         */
+        public static readonly Offset PLAYER_Z = new Offset(0x1046CD4C, 4, MemoryType.BigEndian);
+        public static readonly Offset PLAYER_Y = new Offset(0x1046CD4C + 0x04, 4, MemoryType.BigEndian);
+        public static readonly Offset PLAYER_X = new Offset(0x1046CD4C - 0x04, 4, MemoryType.BigEndian);
+        
+        /**
          * In quarters. 3 Heart = 12. Max = 80
          */
         public static readonly Offset MAX_HEALTH = new Offset(0x145B7B80, 2, MemoryType.BigEndian);
