@@ -148,6 +148,11 @@ namespace ZeldaWindWakerTrainer
                         CheckBox checkBox = (CheckBox)child;
                         checkBox.IsChecked = songs[int.Parse(checkBox.Tag.ToString())];
                     }
+                    
+                    if (CheckboxInfiniteBreath.IsChecked == true)
+                    {
+                        _windWaker.UpdateWaterBreath(900);
+                    }
                 }), DispatcherPriority.SystemIdle);
 
                 invoke.Completed += (sender, e) => { _windWaker.DisableWrite = false; };

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZeldaWindWakerTrainer"
         mc:Ignorable="d"
-        Title="Zelda WindWaker Trainer v1.1.1 - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
+        Title="Zelda WindWaker Trainer v1.1.2 - Jamesst20" Height="450" Width="950" ResizeMode="CanMinimize"
         Closing="Window_Closing">
     <Grid>
         <TabControl SelectedIndex="0">
@@ -45,6 +45,10 @@
                                 <TextBox x:Name="TxtStamina" Width="50" Margin="0 0 5 0" />
                                 <Button x:Name="BtUpdateStamina" Content="Update" Width="60"
                                         Click="BtUpdateStamina_Click" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <Label Content="Infinite breath in water" />
+                                <CheckBox x:Name="CheckboxInfiniteBreath" IsThreeState="False" Margin="0 6 0 0" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0 5">
                                 <Label Content="Max rupee: " Grid.Column="0" />

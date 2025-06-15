@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## 1.1.2 / 2025-06-14
+
+* Add infinite breath under water
+
 ## 1.1.1 / 2025-06-14
 
 * Add player position support

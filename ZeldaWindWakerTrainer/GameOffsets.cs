@@ -26,7 +26,14 @@
          */
         public static readonly Offset MAX_STAMINA = new Offset(0x145B7B93, 1, MemoryType.BigEndian);
         public static readonly Offset STAMINA = new Offset(0x145B7B94, 1, MemoryType.BigEndian);
-
+        
+        /**
+         * Player breath.
+         * 0 = No more breath or outside water
+         * 900 = Max breath
+         */
+        public static readonly Offset WATER_BREATH = new Offset(0x10474BFE, 2, MemoryType.BigEndian);
+        
         /**
          * ID 1 and ID 2 is used for the Swift (fast) sail and the Wind Waker (music instrument)
          */

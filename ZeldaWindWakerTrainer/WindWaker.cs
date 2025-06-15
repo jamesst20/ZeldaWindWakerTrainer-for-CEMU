@@ -90,6 +90,11 @@ namespace ZeldaWindWakerTrainer
         {
             return WriteOffset(GameOffsets.STAMINA, quantity);
         }
+            
+        public bool UpdateWaterBreath(int quantity)
+        {
+            return WriteOffset(GameOffsets.WATER_BREATH, quantity);
+        }
 
         public bool GetWindWakerUnlocked()
         {
